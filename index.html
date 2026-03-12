@@ -46,6 +46,10 @@
                 font-weight: bold;
                 color: #a72839;  
             }
+
+            #canvas{
+                border: 3px solid #333
+            }
         </style>
     </head>
     <body>
@@ -65,10 +69,12 @@
 
             </div>
         
-            <canvas>
+            <canvas id="canvas" width="400" height="400">
                 <!--
                 
-                onde eu posso escrever qualquer grosselha que isso não vai aparecer la na minha pagina
+                <canvas>: é um elemento especial para desenho 2D ou 3D. Por si só,
+                é apenas um retângulo vazio. O JavaScript vai usar o "contexto 2D" 
+                para desenhar a cobra, e comida, etc
                 
                 
                 -->

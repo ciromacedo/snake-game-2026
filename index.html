@@ -145,11 +145,11 @@
             <div class="info">
 
                 <div class="pontuacao">
-                    Pontuação: <span id="pontos"> 0 </span>
+                    Pontuação: <span id="pontos"> </span>
                 </div>
 
                 <div class="recorde">
-                    Recorde: <span id="recorde"> 0 </span>
+                    Recorde: <span id="recorde"> </span>
                 </div>
 
             </div>
@@ -195,12 +195,35 @@
             // CONFIGURAÇÕES DO JOGO
             //=============================
             const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            // tamanho de cada quadrado no jogo
+            const tamanhoQuadrado = 20;
+            // quantos quadrados cabem na largura e altura do espaço 2D
+            const quantidadeQuadrados = canvas.width / tamanhoQuadrado;
+
+            //============================
+            // Variáveis do Jogo
+            //============================
+            let cobra;              // Array (vetor) que guarda as posições da cobra
+            let direcao;            // Direção atual da cobra
+            let proximaDirecao;     // Próxima direção (evita viradas impossíveis)
+            let comida;             // Posição da comida
+            let pontos;             // Pontuação atual
+            let recorde;            // Melhor pontuação
+            let jogoAtivo;          // Se o jogo está rodando
+            let jogoPausado;        // Se o jogo está pausado
+            let intervaloJogo;      // Controla a velocidade do jogo
+
+            //==============================
+            // Carregar recorde do Navegador
+            //==============================
+            recorde = localStorage.getItem('recordeCobrinha') || 156888;
+            document.getElementById('recorde').textContent = recorde;
 
 
 
 
 
-            
             function mudarDirecao(novaDirecao){
                 console.log(novaDirecao)
             }

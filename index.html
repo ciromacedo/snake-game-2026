@@ -288,6 +288,12 @@
                     ctx.moveTo(i * tamanhoQuadrado, 0);
                     ctx.lineTo(i * tamanhoQuadrado, canvas.height);
                     ctx.stroke();
+
+                    //Linha horizontal
+                    ctx.beginPath();
+                    ctx.moveTo(0, i * tamanhoQuadrado);
+                    ctx.lineTo(canvas.width, i * tamanhoQuadrado);
+                    ctx.stroke();
                 } 
                
 

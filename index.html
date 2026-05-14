@@ -272,13 +272,20 @@
             //FUNÇÃO PARA DESENHAR OS ELEMENTOS VISUAIS DO JOGO
             //=============================
             function desenhar(){
+                // PASSO 1
                 //Limpar o fundo do Canvas
-                ctx.fillStyle = '#000000';
+                ctx.fillStyle = '#f0f0f0';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-                //Desenhar a grade (opcional, para visualização)
-                ctx.strokeStyle = '#e0e0e0';
+                // PASSO 2
+                // Desenhar a grade (linhas de referência)
+                ctx.strokeStyle = '#000000';
                 ctx.lineWidth = 0.5;
+
+                for(let i = 0; i <= quantidadeQuadrados; i++){
+                    console.log('Cajuzinho do Cerrado!!! '+i);
+                } 
+               
 
                 ctx.fill();
             }

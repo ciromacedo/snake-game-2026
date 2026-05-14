@@ -283,7 +283,11 @@
                 ctx.lineWidth = 0.5;
 
                 for(let i = 0; i <= quantidadeQuadrados; i++){
-                    console.log('Cajuzinho do Cerrado!!! '+i);
+                    //Linha vertical
+                    ctx.beginPath();
+                    ctx.moveTo(i * tamanhoQuadrado, 0);
+                    ctx.lineTo(i * tamanhoQuadrado, canvas.height);
+                    ctx.stroke();
                 } 
                
 

@@ -300,7 +300,16 @@
                 // forEach: outra forma de percorrer um array
                 // "Para cada pedaço da cobra, faça..."
                 cobra.forEach( (pedaco, indice) => {
-                    console.log('pedaço da cobra '+indice);
+
+                    ctx.fillStyle = '#4CAF50';
+
+                    ctx.fillRect(
+                        pedaco.x * tamanhoQuadrado + 1,
+                        pedaco.y * tamanhoQuadrado + 1,
+                        tamanhoQuadrado -2,
+                        tamanhoQuadrado -2
+                    );
+
                 });
                
 

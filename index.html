@@ -301,7 +301,12 @@
                 // "Para cada pedaço da cobra, faça..."
                 cobra.forEach( (pedaco, indice) => {
 
-                    ctx.fillStyle = '#4CAF50';
+                    let cor_do_pedaco = '#4CAF50';
+                    if(indice === 0){
+                        cor_do_pedaco = '#2d5016';
+                    }
+
+                    ctx.fillStyle = cor_do_pedaco;
 
                     ctx.fillRect(
                         pedaco.x * tamanhoQuadrado + 1,

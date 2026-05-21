@@ -315,16 +315,26 @@
                     );
 
                     //Brilho (efeito de luz) - pequeno retangulo branco semi-transparente
-                    ctx.fillStyle = 'rgba(189, 45, 108, 0.3)';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
                     ctx.fillRect(
                         pedaco.x * tamanhoQuadrado + 2,
                         pedaco.y * tamanhoQuadrado + 2,
                         tamanhoQuadrado / 2,
                         tamanhoQuadrado / 2
                     );
-
                 });
-               
+
+
+               //----  PASSO 4 - Desenhar a comida (círculo vermelho)
+               ctx.fillStyle = '#dc3545';
+               ctx.beginPath();
+               ctx.arc(
+                    comida.x * tamanhoQuadrado + tamanhoQuadrado / 2,
+                    comida.y * tamanhoQuadrado + tamanhoQuadrado / 2,
+                    tamanhoQuadrado / 2 - 2,
+                    0,
+                    Math.PI * 2
+               );
 
                 ctx.fill();
             }

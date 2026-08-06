@@ -365,10 +365,22 @@
             }
 
             function mudarDirecao(novaDirecao){
-               //eu ja commitei essa porcaria
-                console.log('Direção atual: '+direcao);
-                //bem aqui vai aparecer um bug
-                proximaDirecao = novaDirecao;
+              
+                if(novaDirecao === 'cima'    &&  direcao !== 'baixo'){
+                    proximaDirecao = 'cima';
+                }
+
+                if(novaDirecao === 'baixo'    &&  direcao !== 'cima'){
+                    proximaDirecao = 'baixo';
+                }
+
+                if(novaDirecao === 'esquerda'    &&  direcao !== 'direita'){
+                    proximaDirecao = 'esquerda';
+                }
+
+                if(novaDirecao === 'direita'    &&  direcao !== 'esquerda'){
+                    proximaDirecao = 'direita';
+                }
             }
             
             function pausarJogo(){

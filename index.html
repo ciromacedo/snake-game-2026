@@ -264,6 +264,23 @@
                let cabeca = {...cobra[0]} 
 
                //Mover a cabeça na direção atual
+               switch(direcao){
+                    case 'cima':
+                        cabeca.y--;
+                        break;
+                    
+                    case 'baixo':
+                        cabeca.y++;
+                        break;
+
+                    case 'esquerda':
+                        cabeca.x--;
+                        break;
+
+                    case 'direita':
+                        cabeca.x++;
+                        break;
+               }
                
                desenhar();                
             }

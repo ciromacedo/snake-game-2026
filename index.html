@@ -288,6 +288,12 @@
                     return;
                }
 
+               //verificar colisão com paredes (cima ou abaixo)
+                if(cabeca.y < 0 || cabeca.y >= quantidadeQuadrados){
+                    fimDeJogo();
+                    return;
+               }
+
                // adiciona nova cabeça
                cobra.unshift(cabeca);
                //remover o último elemento do vetor

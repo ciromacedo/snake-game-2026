@@ -282,13 +282,25 @@
                         break;
                }
 
+               // verificar colisão com paredes (esquerda ou direita)
+               if(cabeca.x < 0 || cabeca.x >= quantidadeQuadrados){
+                    fimDeJogo();
+                    return;
+               }
+
                // adiciona nova cabeça
                cobra.unshift(cabeca);
-
                //remover o último elemento do vetor
                cobra.pop();
-               
                desenhar();                
+            }
+            //============================
+            // FIM DE JOGO
+            //============================
+            function fimDeJogo(){
+                jogoAtivo = false;
+                alert('Perdeu playboy!!');
+                clearInterval(intervaloJogo);
             }
 
             //=============================

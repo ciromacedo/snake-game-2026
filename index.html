@@ -448,9 +448,9 @@
             //===========================
             //==== CONTROLE DE TECLADO
             //===========================
-            function habilitarTeclasDirecionais(){
-                alert('Teclas habilitadas!!!');
-            }
+           document.addEventListener('keydown', function(event){
+                alert('teclado interceptado');
+           });
 
 
         </script>

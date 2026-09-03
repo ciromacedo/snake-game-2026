@@ -300,6 +300,8 @@
                cobra.pop();
                desenhar();                
             }
+            
+            
             //============================
             // FIM DE JOGO
             //============================
@@ -393,7 +395,7 @@
             }
 
             //=============================
-            //====FUNÇÃO PARA GERAR COMIDA
+            //==== GERAR COMIDA
             //=============================
             function gerarComida(){
                 let posicaoValida = false;
@@ -417,6 +419,9 @@
                 }
             }
 
+            //============================
+            //=====  MUDA A DIREÇÃO DA COBRA - CIMA, BAIXO, ESQUE, DIREI
+            //=============================
             function mudarDirecao(novaDirecao){
               
                 if(novaDirecao === 'cima'    &&  direcao !== 'baixo'){
@@ -439,6 +444,14 @@
             function pausarJogo(){
                 console.log('Pausa no Jogo!!')
             }
+
+            //===========================
+            //==== CONTROLE DE TECLADO
+            //===========================
+            function habilitarTeclasDirecionais(){
+                alert('Teclas habilitadas!!!');
+            }
+
 
         </script>
 

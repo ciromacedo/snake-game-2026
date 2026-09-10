@@ -450,9 +450,9 @@
                     return;
                 }
 
-                pausarJogo = !pausarJogo;
+                jogoPausado = !jogoPausado;
 
-                if(pausarJogo){
+                if(jogoPausado){
                     clearInterval(intervaloJogo);
                 }else{
                     intervaloJogo = setInterval(atualizarJogo, 500);

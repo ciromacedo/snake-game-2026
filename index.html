@@ -294,6 +294,16 @@
                     return;
                }
 
+               // verifica colisão com o próprio corpo
+               for(let i = 0;  i < cobra.length; i++){
+                    let pedacoCorpo = cobra[i];
+                    
+                     if(cabeca.x === pedacoCorpo.x && cabeca.y === pedacoCorpo.y){
+                        fimDeJogo();
+                        return;
+                    }
+               }
+
                // adiciona nova cabeça
                cobra.unshift(cabeca);
                if(cabeca.x === comida.x && cabeca.y === comida.y){

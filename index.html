@@ -296,15 +296,33 @@
 
                // adiciona nova cabeça
                cobra.unshift(cabeca);
-
                if(cabeca.x === comida.x && cabeca.y === comida.y){
+                    pontos = pontos + 1;
+
+                    atualizarPainelPontos();
                     gerarComida();
                }else{
                   cobra.pop();
                }
-                          
-
                desenhar();                
+            }
+
+            //============================
+            // ATUALIZA OS VALORES DO PAINEL DE PONTUAÇÃO + RECORD
+            //============================
+            function atualizarPainelPontos(){
+                document.getElementById('pontos').textContent = pontos;
+                atualizarRecordePontuacao();
+            }
+
+            //============================
+            // ATUALIZA OS VALORES DO RECORD DE PONTUAÇÃO
+            //============================
+            function atualizarRecordePontuacao(){
+                if(pontos > recorde){
+                    document.getElementById('recorde').textContent = pontos;
+                    localStorage.setItem('recordeCobrinha', pontos);
+                }
             }
             
             

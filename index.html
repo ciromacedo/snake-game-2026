@@ -212,7 +212,8 @@
             let recorde;            // Melhor pontuação
             let jogoAtivo;          // Se o jogo está rodando
             let jogoPausado;        // Se o jogo está pausado
-            let intervaloJogo;      // Controla a velocidade do jogo
+            let intervaloJogo;      // Controla o fluxo de execução principal, loop
+            let velocidade;         // Controla Velocidade do Jogo
 
             //==============================
             // Carregar recorde do Navegador
@@ -224,6 +225,7 @@
             // Função para inicar o Jogo
             //==============================
             function iniciarJogo(){
+                velocidade = 400;
                 cobra = [
                     { x: 10, y: 10},
                     { x: 9,  y: 10},
@@ -246,7 +248,7 @@
                 }
 
                 //executa a função atualizarJogo a cada 100 milisegundos
-                intervaloJogo = setInterval(atualizarJogo, 400);
+                intervaloJogo = setInterval(atualizarJogo, velocidade);
             }
 
 
@@ -310,10 +312,19 @@
 
                     atualizarPainelPontos();
                     gerarComida();
+                    incrementoVelocidade(); //TODO - Novo
                }else{
                   cobra.pop();
                }
                desenhar();                
+            }
+
+            function incrementoVelocidade(){
+                if(intervaloJogo){
+                    clearInterval(intervaloJogo);
+                }
+                velocidade = velocidade - 10;
+                intervaloJogo = setInterval(atualizarJogo, velocidade);
             }
 
             //============================
@@ -497,7 +508,7 @@
                     ctx.fillText('PAUSADO!', canvas.width/2, canvas.height/2); 
                     
                 }else{
-                    intervaloJogo = setInterval(atualizarJogo, 400);
+                    intervaloJogo = setInterval(atualizarJogo, velocidade);
                 }
             }
 

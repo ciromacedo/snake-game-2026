@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+        <meta viewport>: importante para sites que funcionam em celular.
+        width=device-width -> a largura da página acompanha a do dispositivo.
+        initial-scale=1    -> sem zoom automático ao abrir a página.
+        -->
+        <title>Jogo da Cobrinha</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <a class="voltar" href="../../">&larr; Voltar ao portal</a>
+            <h1>&#128013; Jogo da Cobrinha &#128517;</h1>
+
+            <div class="info">
+                <div class="card pontuacao">
+                    <span class="rotulo">Pontuação</span>
+                    <span class="valor" id="pontos">0</span>
+                </div>
+                <div class="card recorde">
+                    <span class="rotulo">Recorde</span>
+                    <span class="valor" id="recorde">0</span>
+                </div>
+                <div class="card nivel">
+                    <span class="rotulo">Nível</span>
+                    <span class="valor" id="nivel">1</span>
+                </div>
+                <div class="card combo">
+                    <span class="rotulo">Combo</span>
+                    <span class="valor" id="combo">-</span>
+                </div>
+            </div>
+
+            <div class="config">
+                <label>
+                    Dificuldade:
+                    <select id="dificuldade">
+                        <option value="facil">Fácil</option>
+                        <option value="medio" selected>Médio</option>
+                        <option value="dificil">Difícil</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="checkbox" id="atravessar">
+                    Atravessar paredes
+                </label>
+            </div>
+
+            <canvas id="canvas" width="400" height="400"></canvas>
+
+            <div class="controles">
+                <button id="btnIniciar">Iniciar Jogo</button>
+                <button id="btnPausar">Pausar / Continuar</button>
+                <button id="btnSom" class="secundario">&#128266; Som: ligado</button>
+            </div>
+
+            <div class="teclas">
+                <div class="tecla vazio"></div>
+                <button class="tecla" data-dir="cima"     aria-label="Cima">&#9650;</button>
+                <div class="tecla vazio"></div>
+                <button class="tecla" data-dir="esquerda" aria-label="Esquerda">&#9668;</button>
+                <button class="tecla" data-dir="baixo"    aria-label="Baixo">&#9660;</button>
+                <button class="tecla" data-dir="direita"  aria-label="Direita">&#9658;</button>
+            </div>
+
+            <div class="instrucoes">
+                <h3>Como Jogar:</h3>
+                <p><strong>Controles:</strong> setas ou WASD. Espaço ou P pausa, Enter reinicia. No celular, deslize o dedo sobre o jogo.</p>
+                <p>&#127822; <strong>Maçã vermelha:</strong> +10 pontos e a cobra cresce. Coma uma atrás da outra em até 5 segundos para aumentar o combo (até x5).</p>
+                <p>&#11088; <strong>Maçã dourada:</strong> vale 50 pontos, mas some em 7 segundos.</p>
+                <p>&#10052;&#65039; <strong>Gelo:</strong> deixa o jogo mais lento por 6 segundos.</p>
+                <p>&#128200; A cada 5 maçãs você sobe de nível: o jogo acelera e, no Médio e no Difícil, surgem obstáculos &#129521;.</p>
+                <p>Não bata nas paredes (a menos que ative "Atravessar paredes"), nos obstáculos nem no próprio corpo.</p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>

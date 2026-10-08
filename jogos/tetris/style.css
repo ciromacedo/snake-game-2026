@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 24px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+    margin: 0 0 15px;
+    font-size: 1.8em;
+}
+
+/* ---------- LINK DE VOLTA AO PORTAL ---------- */
+.voltar {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+/* ---------- PAINEL DE INFORMAÇÕES ---------- */
+.info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.card {
+    background-color: #f4f6f8;
+    border-radius: 10px;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .rotulo {
+    font-size: 11px;
+    color: #666;
+}
+
+.card .valor {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.pontuacao .valor { color: #28a745; }
+.recorde   .valor { color: #a72839; }
+.nivel     .valor { color: #667eea; }
+.linhas    .valor { color: #f39c12; }
+
+/* ---------- CONFIGURAÇÕES ---------- */
+.config {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.config select {
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-size: 14px;
+}
+
+/* ---------- ÁREA DE JOGO ---------- */
+.area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+#canvas {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 2;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background-color: #1f2d3d;
+    display: block;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    touch-action: none;   /* evita rolar a página ao tocar no jogo */
+}
+
+.lateral {
+    flex: 0 0 92px;
+    width: 92px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.painel {
+    background-color: #f4f6f8;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.painel .rotulo {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    color: #666;
+}
+
+.painel canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #1f2d3d;
+    border-radius: 6px;
+}
+
+#canvasGuardada {
+    aspect-ratio: 1 / 1;
+}
+
+#canvasProximas {
+    aspect-ratio: 100 / 250;
+}
+
+/* ---------- BOTÕES ---------- */
+.controles {
+    margin-top: 10px;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28A745;
+    padding: 12px 22px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 5px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+button.secundario {
+    background-color: #6c757d;
+}
+
+/* ---------- BOTÕES NA TELA (celular) ---------- */
+.teclas {
+    display: grid;
+    grid-template-columns: repeat(3, 84px);
+    gap: 8px;
+    justify-content: center;
+    margin: 15px auto;
+}
+
+.tecla {
+    height: 52px;
+    padding: 0;
+    margin: 0;
+    background-color: #667eea;
+    color: #F0F0F0;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.tecla:active {
+    background-color: #a72839;
+}
+
+/* ---------- INSTRUÇÕES ---------- */
+.instrucoes {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+}
+
+.instrucoes h3 {
+    margin: 0 0 10px;
+    color: #333;
+    text-align: center;
+}
+
+.instrucoes p {
+    margin: 6px 0;
+}
+
+/* MEDIA QUERY - adaptação para celular */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .card .valor {
+        font-size: 18px;
+    }
+    button {
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+}

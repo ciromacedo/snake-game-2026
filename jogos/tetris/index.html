@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tetris</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <a class="voltar" href="../../">&larr; Voltar ao portal</a>
+            <h1>&#129521; Tetris</h1>
+
+            <div class="info">
+                <div class="card pontuacao">
+                    <span class="rotulo">Pontuação</span>
+                    <span class="valor" id="pontos">0</span>
+                </div>
+                <div class="card recorde">
+                    <span class="rotulo">Recorde</span>
+                    <span class="valor" id="recorde">0</span>
+                </div>
+                <div class="card nivel">
+                    <span class="rotulo">Nível</span>
+                    <span class="valor" id="nivel">1</span>
+                </div>
+                <div class="card linhas">
+                    <span class="rotulo">Linhas</span>
+                    <span class="valor" id="linhas">0</span>
+                </div>
+            </div>
+
+            <div class="config">
+                <label>
+                    Dificuldade:
+                    <select id="dificuldade">
+                        <option value="facil">Fácil</option>
+                        <option value="medio" selected>Médio</option>
+                        <option value="dificil">Difícil</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="checkbox" id="fantasma" checked>
+                    Peça fantasma
+                </label>
+            </div>
+
+            <div class="area">
+                <canvas id="canvas"></canvas>
+
+                <aside class="lateral">
+                    <div class="painel">
+                        <span class="rotulo">Guardar (C)</span>
+                        <canvas id="canvasGuardada"></canvas>
+                    </div>
+                    <div class="painel">
+                        <span class="rotulo">Próximas</span>
+                        <canvas id="canvasProximas"></canvas>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="controles">
+                <button id="btnIniciar">Iniciar Jogo</button>
+                <button id="btnPausar">Pausar / Continuar</button>
+                <button id="btnSom" class="secundario">&#128266; Som: ligado</button>
+            </div>
+
+            <div class="teclas">
+                <button class="tecla" data-acao="guardar">Guardar</button>
+                <button class="tecla" data-acao="girar">Girar</button>
+                <button class="tecla" data-acao="queda">Queda</button>
+                <button class="tecla" data-acao="esquerda" aria-label="Esquerda">&#9664;</button>
+                <button class="tecla" data-acao="baixo"    aria-label="Baixo">&#9660;</button>
+                <button class="tecla" data-acao="direita"  aria-label="Direita">&#9654;</button>
+            </div>
+
+            <div class="instrucoes">
+                <h3>Como Jogar:</h3>
+                <p><strong>Teclado:</strong> &larr; &rarr; ou A D movem. &uarr; ou X gira, Z gira ao contrário. &darr; ou S desce mais rápido. <strong>Espaço</strong> faz a queda instantânea. C ou Shift guarda a peça. P pausa e Enter reinicia.</p>
+                <p><strong>Celular:</strong> use os botões abaixo do jogo ou toque no tabuleiro para girar a peça.</p>
+                <p>Complete linhas horizontais para eliminá-las. 1 linha vale 100 pontos, 2 valem 300, 3 valem 500 e 4 de uma vez (TETRIS) valem 800, tudo multiplicado pelo nível.</p>
+                <p>Eliminar linhas em jogadas seguidas dá bônus de combo. Descer mais rápido dá +1 ponto por casa e a queda instantânea dá +2.</p>
+                <p>A cada 10 linhas você sobe de nível e as peças caem mais rápido. A dificuldade define o nível em que você começa. Você pode guardar uma peça para usar depois, mas só uma vez por peça.</p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>

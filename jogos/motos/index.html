@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corrida de Motos</title>
+
+        <!-- Fonte retrô usada no texto dentro do jogo. Sem internet, o navegador usa "monospace". -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <a class="voltar" href="../../">&larr; Voltar ao portal</a>
+            <h1>&#127949; Corrida de Motos</h1>
+
+            <div class="info">
+                <div class="card pontuacao">
+                    <span class="rotulo">Pontuação</span>
+                    <span class="valor" id="pontos">0</span>
+                </div>
+                <div class="card recorde">
+                    <span class="rotulo">Recorde</span>
+                    <span class="valor" id="recorde">0</span>
+                </div>
+                <div class="card volta">
+                    <span class="rotulo">Volta</span>
+                    <span class="valor" id="volta">1/3</span>
+                </div>
+                <div class="card posicao">
+                    <span class="rotulo">Posição</span>
+                    <span class="valor" id="posicao">-</span>
+                </div>
+            </div>
+
+            <div class="config">
+                <label>
+                    Dificuldade:
+                    <select id="dificuldade">
+                        <option value="facil">Fácil</option>
+                        <option value="medio" selected>Médio</option>
+                        <option value="dificil">Difícil</option>
+                    </select>
+                </label>
+            </div>
+
+            <canvas id="canvas" width="320" height="180"></canvas>
+
+            <div class="controles">
+                <button id="btnIniciar">Iniciar Corrida</button>
+                <button id="btnPausar">Pausar / Continuar</button>
+                <button id="btnSom" class="secundario">&#128266; Som: ligado</button>
+            </div>
+
+            <div class="toque">
+                <div class="grupo">
+                    <button class="tecla" data-tecla="esquerda" aria-label="Esquerda">&#9664;</button>
+                    <button class="tecla" data-tecla="direita"  aria-label="Direita">&#9654;</button>
+                </div>
+                <div class="grupo">
+                    <button class="tecla turbo" data-tecla="turbo">Turbo</button>
+                    <button class="tecla" data-tecla="frear">Frear</button>
+                    <button class="tecla acelerar" data-tecla="acelerar">Acelerar</button>
+                </div>
+            </div>
+
+            <div class="instrucoes">
+                <h3>Como Jogar:</h3>
+                <p><strong>Teclado:</strong> &uarr; ou W acelera, &darr; ou S freia, &larr; &rarr; ou A D inclinam a moto. <strong>Espaço</strong> ou Shift liga o turbo. P pausa e Enter reinicia.</p>
+                <p><strong>Celular:</strong> segure os botões abaixo do jogo. Você pode apertar vários ao mesmo tempo.</p>
+                <p>Termine todas as voltas antes que o <strong>tempo</strong> acabe. Cada volta completada dá tempo extra e 1000 pontos.</p>
+                <p>Nas curvas fortes o jogo empurra a moto para fora da pista: tire o pé do acelerador. As placas amarelas avisam para que lado a curva vai.</p>
+                <p>Evite sair da pista (você perde velocidade) e bater nos postes e placas. Encoste nos rivais e você perde velocidade.</p>
+                <p>O <strong>turbo</strong> deixa a moto mais rápida enquanto a barra tiver energia, e ela recarrega sozinha. Ao final, a posição e o tempo que sobrou rendem pontos extras.</p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
